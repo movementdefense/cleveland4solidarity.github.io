@@ -1,0 +1,27 @@
+// Mq Responsive Configuration
+$mq-responsive: true;
+$xs: 360px;
+$sm: 758px;
+$md: 980px;
+$lg: 1040px;
+$xl: 1200px;
+$mq-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl
+);
+// static breakpoint (when mq-responsive is false)
+// $mq-static-breakpoint: desktop;
+// show breakpoints
+$mq-show-breakpoints: (xs, sm, md, lg, xl);
+// add custom breakpoint
+// @include mq-add-breakpoint(tvscreen, 1920px);
+
+// Colors
+@import 'colors';
+
+
+// Common
+$img-border-radius:   5px;

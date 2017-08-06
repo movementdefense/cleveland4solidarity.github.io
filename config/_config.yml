@@ -1,0 +1,51 @@
+###
+# Configuration file
+# Contains site data, core jekyll config, plugin config, etc.
+
+## Org settings
+title: Site title
+logo: /assets/img/global/logo.svg
+email: email
+phone: phone
+city: city
+state: state
+zip: zip
+
+# Collections
+collections:
+  updates:
+    title: Updates
+    output: true
+    permalink: "/updates/:title"
+  pages:
+    title: Pages
+    output: true
+    permalink: "/:title"
+  people:
+    title: People
+    output: true
+    permalink: "/people/:name"
+  settings:
+    title: Settings
+    output: false
+
+
+## Core Site Settings
+# jekyll configuration
+baseurl: '/'
+url: 'http://carsonjon.es'
+permalink: none
+assets-base-url: '/assets/'
+source: src
+destination: dist
+compress_html:
+  clippings: all
+  comments: all
+  ignore:
+    envs: ['dev']
+# modules
+include: ['_pages', '_posts', '_data', '_people', '_']
+exclude: ['assets', 'js', 'sass', 'node_modules', Gemfile, Gemfile.lock, notes.txt, package.json, README.md, 'bower.json', 'package-lock.json']
+keep_files:
+  - assets
+markdown: kramdown

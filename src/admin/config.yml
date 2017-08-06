@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: your-github-login/your-repo-name
+  branch: master
+  site_domain: something-random-40716.netlify.com
+media_folder: "src/assets/img/uploads"
+collections:
+  - name: "update" # Used in routes, e.g. /admin/collections/blog
+    label: "Post" # Used in the UI
+    folder: "src/_updates" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "update"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "people" # Used in routes, e.g. /admin/collections/blog
+    label: "Person" # Used in the UI
+    folder: "src/_people" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "people"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Bio", name: "body", widget: "markdown"}
+  - name: "settings" # Used in routes, e.g. /admin/collections/blog
+    label: "Settings" # Used in the UI
+    folder: "src/_settings" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: "setting" # Filename template i.e. YYYY-MM-DD-title.md
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - name: "site"
+        widget: "object"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "upload"}
+      - name: "social"
+        widget: "object"
+        fields:
+          - {label: "Facebook Link", name: "facebook", widget: "string"}
+          - {label: "Twitter Link", name: "twitter", widget: "string"}
+          - {label: "Fundraising Link", name: "fund", widget: "string"}
