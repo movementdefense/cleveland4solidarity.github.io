@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: your-github-login/your-repo-name
+  repo: cleveland4solidarity/cleveland4solidarity.github.io
   branch: master
-  site_domain: something-random-40716.netlify.com
+  site_domain: steward-bar-82035.netlify.com
 media_folder: "src/assets/img/uploads"
 collections:
   - name: "update" # Used in routes, e.g. /admin/collections/blog
