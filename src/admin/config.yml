@@ -5,8 +5,8 @@ backend:
   site_domain: steward-bar-82035.netlify.com
 media_folder: "src/assets/img/uploads"
 collections:
-  - name: "update" # Used in routes, e.g. /admin/collections/blog
-    label: "Post" # Used in the UI
+  - name: "updates" # Used in routes, e.g. /admin/collections/blog
+    label: "Update" # Used in the UI
     folder: "src/_updates" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
@@ -18,24 +18,39 @@ collections:
     label: "Person" # Used in the UI
     folder: "src/_people" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
+    slug: "{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Layout", name: "layout", widget: "hidden", default: "people"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "person"}
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Birthdate", name: "birthdate", widget: "date", default: "1992-09-10", format: "YYYY-MM-DD"}
       - {label: "Bio", name: "body", widget: "markdown"}
+      - {label: "Writing Address", name: "writing-address", widget: "markdown"}
+      - {label: "Writing Instructions", name: "writing-instructions", widget: "markdown"}
+      - {label: "Link to Booklist", name: "booklist-url", widget: "string"}
+  - name: "pages" # Used in routes, e.g. /admin/collections/blog
+    label: "Page" # Used in the UIx
+    folder: "src/_pages" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "pages"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "settings" # Used in routes, e.g. /admin/collections/blog
     label: "Settings" # Used in the UI
     folder: "src/_settings" # The path to the folder where the documents are stored
     create: false # Allow users to create new documents in this collection
-    slug: "setting" # Filename template i.e. YYYY-MM-DD-title.md
+    slug: "settings" # Filename template i.e. YYYY-MM-DD-title.md
     editor:
       preview: false
     fields: # The fields for each document, usually in front matter
+      - {name: "title", widget: "hidden", default: "Settings"}
+      - {name: "layout", widget: "hidden", default: "settings"}
       - name: "site"
         widget: "object"
         fields:
           - {label: "Site Title", name: "title", widget: "string"}
-          - {label: "Logo", name: "logo", widget: "upload"}
+          - {label: "Logo", name: "logo", widget: "image"}
       - name: "social"
         widget: "object"
         fields:

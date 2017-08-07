@@ -29,7 +29,6 @@ collections:
     title: Settings
     output: false
 
-
 ## Core Site Settings
 # jekyll configuration
 baseurl: '/'
