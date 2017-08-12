@@ -22,11 +22,17 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "person"}
       - {label: "Name", name: "title", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image"}
       - {label: "Birthdate", name: "birthdate", widget: "date", default: "1992-09-10", format: "YYYY-MM-DD"}
       - {label: "Bio", name: "body", widget: "markdown"}
       - {label: "Writing Address", name: "writing-address", widget: "markdown"}
       - {label: "Writing Instructions", name: "writing-instructions", widget: "markdown"}
       - {label: "Link to Booklist", name: "booklist-url", widget: "string"}
+      - name: "photos"
+        widget: "list"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Photo", name: "photo", widget: "image"}
   - name: "pages" # Used in routes, e.g. /admin/collections/blog
     label: "Pages" # Used in the UIx
     folder: "src/_pages" # The path to the folder where the documents are stored
