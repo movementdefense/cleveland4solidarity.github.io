@@ -6,7 +6,7 @@ backend:
 media_folder: "src/assets/img/uploads"
 collections:
   - name: "updates" # Used in routes, e.g. /admin/collections/blog
-    label: "Update" # Used in the UI
+    label: "Updates" # Used in the UI
     folder: "src/_updates" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
@@ -15,7 +15,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "people" # Used in routes, e.g. /admin/collections/blog
-    label: "Person" # Used in the UI
+    label: "People" # Used in the UI
     folder: "src/_people" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
@@ -28,7 +28,7 @@ collections:
       - {label: "Writing Instructions", name: "writing-instructions", widget: "markdown"}
       - {label: "Link to Booklist", name: "booklist-url", widget: "string"}
   - name: "pages" # Used in routes, e.g. /admin/collections/blog
-    label: "Page" # Used in the UIx
+    label: "Pages" # Used in the UIx
     folder: "src/_pages" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md

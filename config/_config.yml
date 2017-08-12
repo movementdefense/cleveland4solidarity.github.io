@@ -24,7 +24,7 @@ collections:
   people:
     title: People
     output: true
-    permalink: "/people/:name"
+    permalink: "/people/:title"
   settings:
     title: Settings
     output: false
