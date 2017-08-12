@@ -29,6 +29,7 @@ collections:
       - {label: "Writing Instructions", name: "writing-instructions", widget: "markdown"}
       - {label: "Link to Booklist", name: "booklist-url", widget: "string"}
       - name: "photos"
+        label: "Photos"
         widget: "list"
         fields:
           - {label: "Title", name: "title", widget: "string"}
